@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-export class Otsu {
+class Otsu {
 
     otsu: string;
 
@@ -10,7 +10,9 @@ export class Otsu {
 
     }
 
-    
+    /**
+    * @param {String} username - Osu account username
+    */
     async userId(username: string) {
 
         try {
@@ -50,3 +52,5 @@ export class Otsu {
 
 
 }
+
+module.exports = Otsu;
