@@ -3,11 +3,13 @@
 
     /* Language and Environment */
     "target": "es2016",
+    "allowJs": true,
     /* Modules */
     "module": "commonjs",
-    
+    "declaration": true,
     /* Emit */
     "outDir": "./dist",
+    "declarationDir": "./typings",
     
     /* Interop Constraints */
     "esModuleInterop": true,
@@ -15,12 +17,16 @@
 
     /* Type Checking */
     "strict": true,
-
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+        
     /* Completeness */
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "experimentalDecorators": true
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ]
 }
