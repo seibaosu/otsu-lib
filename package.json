@@ -1,0 +1,15 @@
+{
+  "name": "otsu-lib",
+  "version": "1.0.0",
+  "description": "An unofficial API for a certain Rhythm games .",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "^2.6.4",
+    "node-fetch": "^2.6.4"
+  }
+}
