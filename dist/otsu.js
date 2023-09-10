@@ -21,7 +21,7 @@ class Otsu {
     /**
     * @param {String} username - Osu account username
     */
-    userId(username) {
+    user_id(username) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const req = yield (0, node_fetch_1.default)(`${this.otsu}/u/${username}`);
@@ -48,10 +48,13 @@ class Otsu {
             }
         });
     }
-    dataUsers(username) {
+    /**
+    * @param {String} username - Osu account username
+    */
+    user_data(username) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const userId = yield this.userId(username);
+                const userId = yield this.user_id(username);
                 if (userId.status === 404) {
                     return {
                         status: 404,
@@ -65,8 +68,49 @@ class Otsu {
                     const det = $('.osu-layout--full').attr('data-initial-data');
                     return {
                         status: 200,
+                        message: 'USER_DATA_FOUND',
                         data: JSON.parse(`${det}`)
                     };
+                }
+            }
+            catch (e) {
+                return e;
+            }
+        });
+    }
+    user_best_plays(username, mode = 0) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let strmode;
+                strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : mode;
+                const userId = yield this.user_id(username);
+                if (userId.status === 404) {
+                    return {
+                        status: 404,
+                        message: 'USER_NOT_FOUND'
+                    };
+                }
+                else {
+                    const req = yield (0, node_fetch_1.default)(`${this.otsu}/users/${userId.id}/scores/best?mode=${strmode}&limit=100`);
+                    const res = yield req.json();
+                    if (res.length === 0) {
+                        return {
+                            status: 400,
+                            message: 'NO_DATA'
+                        };
+                    }
+                    else {
+                        let replayId = [];
+                        for (let i = 0; i < res.length; i++) {
+                            const repId = yield res[i];
+                            replayId.push(repId);
+                        }
+                        return {
+                            status: 200,
+                            message: 'DATA_FOUND',
+                            data: replayId
+                        };
+                    }
                 }
             }
             catch (e) {
