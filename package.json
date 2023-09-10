@@ -2,14 +2,18 @@
   "name": "otsu-lib",
   "version": "1.0.0",
   "description": "An unofficial module for a certain Rhythm Game",
-  "main": "index.js",
+  "main": "./dist/otsu.js",
+  "typings": "./typings/otsu.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "author": "Seiba",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@types/node-fetch": "^2.6.4",
+    "cheerio": "^1.0.0-rc.12",
     "node-fetch": "^2.6.4"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.4"
   }
 }
