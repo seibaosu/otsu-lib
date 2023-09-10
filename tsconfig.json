@@ -24,9 +24,13 @@
         
     /* Completeness */
     "skipLibCheck": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "useUnknownInCatchVariables": false
   },
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "src/*"
   ]
 }
