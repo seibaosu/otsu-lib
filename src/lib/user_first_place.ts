@@ -10,7 +10,7 @@ export const getFirstPlay = async (userId: number, mode: number) => {
         strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : mode;
 
         let result: any[] = [];
-        for (let i = 5; i < 50000; i += 50) {
+        for (let i = 5; i < 500000; i += 50) {
 
             const req = await fetch(`${BaseURL}/users/${userId}/scores/firsts?mode=${strmode}&limit=51&offset=${i}`)
             const res = await req.json();
@@ -28,7 +28,19 @@ export const getFirstPlay = async (userId: number, mode: number) => {
 
         }
         
-        return result;
+        if (result.length == 0) {
+            
+            return {
+                status: 404,
+                message: 'NO_DATA'
+            }
+        } else {
+
+            return {
+                status: 200,
+                data: result
+            }
+        }
 
     } catch (err) {
         return new Error(err);
