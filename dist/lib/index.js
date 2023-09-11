@@ -17,3 +17,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./user_id"), exports);
 __exportStar(require("./user_data"), exports);
 __exportStar(require("./user_best_plays"), exports);
+__exportStar(require("./user_first_place"), exports);
