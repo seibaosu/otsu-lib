@@ -21,11 +21,20 @@ class Otsu {
         });
     }
     /**
-    * @param {number} userId - Osu account username
+    * @param {number} userId - Get it from user_id
     */
     user_data(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             return (0, index_1.getUserData)(userId);
+        });
+    }
+    /**
+    * @param {number} userId - Get it from user_id
+    * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    */
+    user_best_plays(userId, mode = 0) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (0, index_1.getBestPlays)(userId, mode);
         });
     }
 }
