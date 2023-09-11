@@ -1,4 +1,4 @@
-import { getUserId, getUserData, getBestPlays, getFirstPlay } from './lib/index';
+import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay } from './lib/index';
 
 class Otsu {
 
@@ -39,6 +39,16 @@ class Otsu {
     async user_first_place(userId: number, mode: number = 0) {
 
         return getFirstPlay(userId, mode);
+
+    }
+
+    /**
+    * @param {number} userId - Get it from user_id
+    * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    */
+    async user_recent_play(userId: number, mode: number = 0) {
+
+        return getRecentPlay(userId, mode);
 
     }
 

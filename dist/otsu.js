@@ -46,5 +46,14 @@ class Otsu {
             return (0, index_1.getFirstPlay)(userId, mode);
         });
     }
+    /**
+    * @param {number} userId - Get it from user_id
+    * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    */
+    user_recent_play(userId, mode = 0) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (0, index_1.getRecentPlay)(userId, mode);
+        });
+    }
 }
 module.exports = Otsu;
