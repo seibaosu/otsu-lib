@@ -5,7 +5,9 @@
   "main": "./dist/otsu.js",
   "typings": "./typings/otsu.d.ts",
   "scripts": {
-    "build": "tsc"
+    "clean": "rimraf dist && rimraf typings",
+    "build": "npm run clean && tsc --build tsconfig.json",
+    "test": "npm run build && node ./dist/otsu"
   },
   "author": "Seiba",
   "license": "MIT",
@@ -14,6 +16,7 @@
     "node-fetch": "^2.6.4"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.6.4"
+    "@types/node-fetch": "^2.6.4",
+    "rimraf": "^5.0.1"
   }
 }
