@@ -1,4 +1,4 @@
-import { getUserId, getUserData } from './lib/index';
+import { getUserId, getUserData, getBestPlays } from './lib/index';
 
 class Otsu {
 
@@ -22,58 +22,15 @@ class Otsu {
 
     }
 
-    // async user_best_plays(username: string, mode: number = 0) {
+    /**
+    * @param {number} userId - Get it from user_id
+    * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    */
+    async user_best_plays(userId: number, mode: number = 0) {
 
-        
-    //     try {
+        return getBestPlays(userId, mode);
 
-    //         let strmode;
-    //         strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : mode;
-
-    //         const userId = await this.user_id(username);
-    //         if (userId.status === 404) {
-
-    //             return {
-    //                 status: 404,
-    //                 message: 'USER_NOT_FOUND'
-    //             }
-    //         } else {
-
-    //             const req = await fetch(`${this.otsu}/users/${userId.id}/scores/best?mode=${strmode}&limit=100`);
-    
-    //             const res = await req.json();
-    //             if (res.length === 0) {
-    //                 return {
-    //                     status: 400,
-    //                     message: 'NO_DATA'
-    //                 }
-    //             } else {
-
-    //                 let replayId = [];
-    //                 for (let i = 0; i < res.length; i++) {
-
-    //                     const repId = await res[i];
-
-    //                     replayId.push(repId);
-
-    //                 }
-
-    //                 return {
-    //                     status: 200,
-    //                     message: 'DATA_FOUND',
-    //                     data: replayId
-    //                 }
-
-    //             }
-                
-    //         }
-
-
-    //     } catch (e) {
-    //         return e;
-    //     }
-
-    // }
+    }
 
 }
 
