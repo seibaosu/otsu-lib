@@ -2,8 +2,8 @@
   "name": "otsu-lib",
   "version": "1.202309.1",
   "description": "An unofficial module for a certain Rhythm Game",
-  "main": "./dist/otsu.js",
-  "typings": "./typings/otsu.d.ts",
+  "main": "./dist/src/otsu.js",
+  "typings": "./typings/src/otsu.d.ts",
   "scripts": {
     "clean": "rimraf dist && rimraf typings",
     "build": "npm run clean && tsc --build tsconfig.json",
