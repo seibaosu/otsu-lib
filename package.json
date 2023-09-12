@@ -1,5 +1,5 @@
 {
-  "name": "@seibaosu/otsu-lib",
+  "name": "otsu-lib",
   "version": "1.202309.1",
   "description": "An unofficial module for a certain Rhythm Game",
   "main": "./dist/otsu.js",
@@ -10,9 +10,11 @@
     "test": "npm run build && node ./dist/otsu"
   },
   "repository": {
-    "url": "https://github.com/seibaosu/otsu-lib"
+    "url": "git+https://github.com/seibaosu/otsu-lib.git"
   },
-  "publishConfig": { "@seibaosu:registry": "https://npm.pkg.github.com" },
+  "publishConfig": {
+    "@seibaosu:registry": "https://npm.pkg.github.com"
+  },
   "author": "Seiba",
   "license": "MIT",
   "dependencies": {
@@ -22,5 +24,9 @@
   "devDependencies": {
     "@types/node-fetch": "^2.6.4",
     "rimraf": "^5.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/seibaosu/otsu-lib/issues"
+  },
+  "homepage": "https://github.com/seibaosu/otsu-lib#readme"
 }
