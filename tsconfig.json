@@ -8,8 +8,8 @@
     "module": "commonjs",
     "declaration": true,
     /* Emit */
-    "outDir": "./dist",
-    "declarationDir": "./typings",
+    "outDir": "./lib",
+    "declarationDir": "./types",
     
     /* Interop Constraints */
     "esModuleInterop": true,
