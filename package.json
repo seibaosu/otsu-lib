@@ -12,6 +12,7 @@
   "repository": {
     "url": "https://github.com/seibaosu/otsu-lib"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": "Seiba",
   "license": "MIT",
   "dependencies": {
