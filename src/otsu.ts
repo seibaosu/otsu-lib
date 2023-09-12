@@ -1,4 +1,4 @@
-import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay } from './lib/index';
+import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay, updateBeatmaps } from './lib/index';
 
 class Otsu {
 
@@ -49,6 +49,12 @@ class Otsu {
     async user_recent_play(userId: number, mode: number = 0) {
 
         return getRecentPlay(userId, mode);
+
+    }
+
+    async beatmap_update() {
+
+        return updateBeatmaps();
 
     }
 

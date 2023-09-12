@@ -55,5 +55,10 @@ class Otsu {
             return (0, index_1.getRecentPlay)(userId, mode);
         });
     }
+    beatmap_update() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (0, index_1.updateBeatmaps)();
+        });
+    }
 }
 module.exports = Otsu;

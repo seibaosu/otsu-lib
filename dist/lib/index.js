@@ -19,3 +19,4 @@ __exportStar(require("./user_data"), exports);
 __exportStar(require("./user_best_plays"), exports);
 __exportStar(require("./user_first_place"), exports);
 __exportStar(require("./user_recent_plays"), exports);
+__exportStar(require("./beatmap/beatmap_update"), exports);
