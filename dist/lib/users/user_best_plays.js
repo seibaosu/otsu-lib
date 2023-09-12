@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getBestPlays = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
-const constants_1 = require("../constants");
+const constants_1 = require("../../constants");
 const getBestPlays = (userId, mode) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let strmode;

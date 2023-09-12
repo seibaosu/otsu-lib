@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { load } from 'cheerio';
 
-import { BaseURL } from '../constants';
+import { BaseURL } from '../../constants';
 
 export const getUserData = async (userId: number) => {
 

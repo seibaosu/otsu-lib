@@ -12,17 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFirstPlay = void 0;
+exports.getRecentPlay = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
-const constants_1 = require("../constants");
-const helpers_1 = require("../helpers");
-const getFirstPlay = (userId, mode) => __awaiter(void 0, void 0, void 0, function* () {
+const constants_1 = require("../../constants");
+const helpers_1 = require("../../helpers");
+const getRecentPlay = (userId, mode) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let strmode;
         strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : mode;
         let result = [];
         for (let i = 5; i < 500000; i += 50) {
-            const req = yield (0, node_fetch_1.default)(`${constants_1.BaseURL}/users/${userId}/scores/firsts?mode=${strmode}&limit=51&offset=${i}`);
+            const req = yield (0, node_fetch_1.default)(`${constants_1.BaseURL}/users/${userId}/scores/recent?mode=${strmode}&limit=51&offset=${i}`);
             const res = yield req.json();
             // if res is empty, break the loop
             if (res.length === 0)
@@ -50,4 +50,4 @@ const getFirstPlay = (userId, mode) => __awaiter(void 0, void 0, void 0, functio
         return new Error(err);
     }
 });
-exports.getFirstPlay = getFirstPlay;
+exports.getRecentPlay = getRecentPlay;

@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
-import { BaseURL } from '../constants';
-import { delay } from '../helpers';
+import { BaseURL } from '../../constants';
+import { delay } from '../../helpers';
 
-export const getFirstPlay = async (userId: number, mode: number) => {
+export const getRecentPlay = async (userId: number, mode: number) => {
 
     try {
 
@@ -12,7 +12,7 @@ export const getFirstPlay = async (userId: number, mode: number) => {
         let result: any[] = [];
         for (let i = 5; i < 500000; i += 50) {
 
-            const req = await fetch(`${BaseURL}/users/${userId}/scores/firsts?mode=${strmode}&limit=51&offset=${i}`)
+            const req = await fetch(`${BaseURL}/users/${userId}/scores/recent?mode=${strmode}&limit=51&offset=${i}`)
             const res = await req.json();
             // if res is empty, break the loop
             if (res.length === 0) break;

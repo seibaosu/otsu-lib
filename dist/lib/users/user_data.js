@@ -12,30 +12,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUserId = void 0;
+exports.getUserData = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
-const constants_1 = require("../constants");
-const getUserId = (username) => __awaiter(void 0, void 0, void 0, function* () {
+const cheerio_1 = require("cheerio");
+const constants_1 = require("../../constants");
+const getUserData = (userId) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const req = yield (0, node_fetch_1.default)(`${constants_1.BaseURL}/u/${username}`);
-        const res = req.status;
-        if (res === 200) {
-            const url = req.url;
-            const id = url.split('/').pop();
+        const req = yield (0, node_fetch_1.default)(`${constants_1.BaseURL}/users/${userId}`);
+        if (req.status == 200) {
+            const res = yield req.text();
+            const $ = (0, cheerio_1.load)(res);
+            const det = $('.osu-layout--full').attr('data-initial-data');
             return {
                 status: 200,
-                id: parseInt(`${id}`)
+                data: JSON.parse(`${det}`)
             };
         }
         else {
             return {
                 status: 404,
-                message: 'USER_NOT_FOUND'
+                message: 'DATA_NOT_FOUND'
             };
         }
     }
-    catch (err) {
-        return new Error(err);
+    catch (e) {
+        return e;
     }
 });
-exports.getUserId = getUserId;
+exports.getUserData = getUserData;

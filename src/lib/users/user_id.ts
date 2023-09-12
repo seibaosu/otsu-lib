@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { BaseURL } from '../constants';
+import { BaseURL } from '../../constants';
 
 export const getUserId = async (username: string) => {
 
