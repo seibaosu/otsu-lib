@@ -1,3 +1,3 @@
-const Otsu = require('./src/otsu');
+const Otsu = require('./dist/index');
 
 module.exports = Otsu;
