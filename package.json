@@ -1,6 +1,6 @@
 {
   "name": "otsu-lib",
-  "version": "1.0.0",
+  "version": "1.202309.1",
   "description": "An unofficial module for a certain Rhythm Game",
   "main": "./dist/otsu.js",
   "typings": "./typings/otsu.d.ts",
@@ -8,6 +8,9 @@
     "clean": "rimraf dist && rimraf typings",
     "build": "npm run clean && tsc --build tsconfig.json",
     "test": "npm run build && node ./dist/otsu"
+  },
+  "repository": {
+    "url": "https://github.com/seibaosu/otsu-lib"
   },
   "author": "Seiba",
   "license": "MIT",
