@@ -52,6 +52,10 @@ class Otsu {
 
     }
 
+    /**
+     * 
+     * Update latedt beatmap uploaded
+     */
     async beatmap_update() {
 
         return updateBeatmaps();

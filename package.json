@@ -5,9 +5,9 @@
   "main": "./lib/index.js",
   "typings": "./types/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist && rimraf typings",
+    "clean": "rimraf lib && rimraf types",
     "build": "npm run clean && tsc --build tsconfig.json",
-    "test": "npm run build && node ./dist/otsu"
+    "test": "npm run build && node ./lib/index"
   },
   "repository": {
     "url": "git+https://github.com/seibaosu/otsu-lib.git"
