@@ -4,11 +4,13 @@
       "module": "CommonJS",
       "target": "ES2016",
       "strict": true,
+      "declaration": true,
       "strictFunctionTypes": true,
       "strictBindCallApply": true,
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
       "outDir": "./lib",
+      "declarationDir": "./typings",
       "experimentalDecorators": true
   },
   "include": [
