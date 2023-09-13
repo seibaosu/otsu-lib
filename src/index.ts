@@ -1,4 +1,4 @@
-import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay, updateBeatmaps } from './utils/index';
+import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay, updateBeatmaps } from './functions';
 
 export class Otsu {
 

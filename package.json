@@ -1,12 +1,12 @@
 {
   "name": "otsu-lib",
-  "version": "1.20230913.1721",
+  "version": "1.230913.1721",
   "description": "An unofficial module for a certain Rhythm Game",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
     "build": "npm run clean && tsc --build tsconfig.json",
-    "test": "npm run build && node ./lib/index"
+    "test": "npm run build && node ."
   },
   "repository": {
     "url": "git+https://github.com/seibaosu/otsu-lib.git"
