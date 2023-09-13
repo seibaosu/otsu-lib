@@ -1,6 +1,6 @@
 import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay, updateBeatmaps } from './utils/index';
 
-class Otsu {
+export class Otsu {
 
     constructor() {}
 
@@ -63,5 +63,3 @@ class Otsu {
     }
 
 }
-
-module.exports = Otsu;
