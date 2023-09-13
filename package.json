@@ -1,10 +1,10 @@
 {
   "name": "otsu-lib",
-  "version": "1.20230913.1717",
+  "version": "1.20230913.1721",
   "description": "An unofficial module for a certain Rhythm Game",
   "main": "./lib/index.js",
   "scripts": {
-    "clean": "rimraf lib && rimraf types",
+    "clean": "rimraf lib",
     "build": "npm run clean && tsc --build tsconfig.json",
     "test": "npm run build && node ./lib/index"
   },
