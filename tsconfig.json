@@ -3,13 +3,11 @@
       "allowJs": true,
       "module": "CommonJS",
       "target": "ES2016",
-      "declaration": true,
       "strict": true,
       "strictFunctionTypes": true,
       "strictBindCallApply": true,
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
-      "declarationDir": "./types",
       "outDir": "./lib",
       "experimentalDecorators": true
   },

@@ -3,7 +3,6 @@
   "version": "1.20230913.1717",
   "description": "An unofficial module for a certain Rhythm Game",
   "main": "./lib/index.js",
-  "typings": "./types/index.d.ts",
   "scripts": {
     "clean": "rimraf lib && rimraf types",
     "build": "npm run clean && tsc --build tsconfig.json",
