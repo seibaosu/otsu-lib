@@ -38,6 +38,6 @@ export const getBestPlays = async (userId: number, mode: number) => {
         }
 
     } catch (err) {
-        return new Error(err);
+        return err;
     }
 }

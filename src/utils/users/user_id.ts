@@ -27,7 +27,7 @@ export const getUserId = async (username: string) => {
         }
 
     } catch (err) {
-        return new Error(err);
+        return err;
     }
 
 }

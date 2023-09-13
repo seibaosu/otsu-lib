@@ -29,8 +29,8 @@ export const getUserData = async (userId: number) => {
             }
         }
         
-    } catch (e) {
-        return e;
+    } catch (err) {
+        return err;
     }
 
 }

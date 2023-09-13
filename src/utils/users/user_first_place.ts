@@ -43,6 +43,6 @@ export const getFirstPlay = async (userId: number, mode: number) => {
         }
 
     } catch (err) {
-        return new Error(err);
+        return err;
     }
 }

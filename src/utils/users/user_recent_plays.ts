@@ -43,6 +43,6 @@ export const getRecentPlay = async (userId: number, mode: number) => {
         }
 
     } catch (err) {
-        return new Error(err);
+        return err;
     }
 }

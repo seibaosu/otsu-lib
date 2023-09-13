@@ -1,36 +1,22 @@
 {
   "compilerOptions": {
-
-    /* Language and Environment */
-    "target": "es2016",
-    "allowJs": true,
-    /* Modules */
-    "module": "commonjs",
-    "declaration": true,
-    /* Emit */
-    "outDir": "./lib",
-    "declarationDir": "./types",
-    
-    /* Interop Constraints */
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Type Checking */
-    "strict": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-        
-    /* Completeness */
-    "skipLibCheck": true,
-    "experimentalDecorators": true,
-    "useUnknownInCatchVariables": false
+      "allowJs": true,
+      "module": "CommonJS",
+      "target": "ES2016",
+      "declaration": true,
+      "strict": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": true,
+      "declarationDir": "./types",
+      "outDir": "./lib",
+      "experimentalDecorators": true
   },
-  "exclude": [
-    "node_modules"
-  ],
   "include": [
-    "src/**/*"
-  ]
+      "src/**/*"
+  ],
+  "exclude": [
+      "node_modules"
+  ],
 }
