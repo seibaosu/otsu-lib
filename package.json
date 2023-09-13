@@ -4,7 +4,7 @@
   "description": "An unofficial module for a certain Rhythm Game",
   "main": "./lib/index.js",
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf lib && rimraf typings",
     "build": "npm run clean && tsc --build tsconfig.json",
     "test": "npm run build && node ."
   },
