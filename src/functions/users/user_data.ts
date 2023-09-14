@@ -2,14 +2,23 @@ import fetch from "node-fetch";
 import { load } from 'cheerio';
 
 import { BaseURL } from '../../constants';
+import { getUserId } from "./user_id";
 
-export const getUserData = async (userId: number) => {
+export const getUserData = async (username: string) => {
 
     try {
 
-        const req = await fetch(`${BaseURL}/users/${userId}`);
+        const userId = await getUserId(username);
+        if (userId.status == 404) {
 
-        if(req.status == 200) {
+            return {
+                status: 404,
+                message: 'DATA_NOT_FOUND'
+            }
+
+        } else {
+
+            const req = await fetch(`${BaseURL}/users/${userId.id}`);
 
             const res = await req.text();
             const $ = load(res);
@@ -21,12 +30,6 @@ export const getUserData = async (userId: number) => {
                 data: JSON.parse(`${det}`)
             }
 
-        } else {
-
-            return {
-                status: 404,
-                message: 'DATA_NOT_FOUND'
-            }
         }
         
     } catch (err) {

@@ -14,11 +14,11 @@ export class Otsu {
     }
 
     /**
-    * @param {number} userId - Get it from user_id
+    * @param {string} username - Get it from user_id
     */
-    async user_data(userId: number) {
+    async user_data(username: string) {
 
-        return getUserData(userId);
+        return getUserData(username);
 
     }
 
