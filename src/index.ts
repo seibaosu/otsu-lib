@@ -46,7 +46,7 @@ export class Otsu {
     * @param {String} username - Osu account username
     * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
     */
-    async user_recent_play(username: number, mode: number = 0) {
+    async user_recent_play(username: string, mode: number = 0) {
 
         return getRecentPlay(username, mode);
 
