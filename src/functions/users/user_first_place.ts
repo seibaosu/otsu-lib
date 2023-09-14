@@ -15,12 +15,12 @@ export const getFirstPlay = async (username: string, mode: number) => {
 
             return {
                 status: 404,
-                message: 'NO_DATA'
+                message: 'USER_NOT_FOUND'
             }
 
         } else {
 
-            let result: any[] = [];
+            let result: any = [];
             for (let i = 5; i < 500000; i += 50) {
 
                 const req = await fetch(`${BaseURL}/users/${userId.id}/scores/firsts?mode=${strmode}&limit=51&offset=${i}`)
@@ -39,9 +39,20 @@ export const getFirstPlay = async (username: string, mode: number) => {
 
             }
 
-            return {
-                status: 200,
-                data: result
+            if (result.length == 0) {
+
+                return {
+                    status: 404,
+                    message: 'NO_DATA'
+                }
+
+            } else {
+
+                return {
+                    status: 200,
+                    data: result
+                }
+                
             }
 
         }
