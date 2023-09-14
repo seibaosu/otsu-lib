@@ -14,7 +14,7 @@ export class Otsu {
     }
 
     /**
-    * @param {string} username - Get it from user_id
+    * @param {String} username - Osu account username
     */
     async user_data(username: string) {
 
@@ -23,32 +23,32 @@ export class Otsu {
     }
 
     /**
-    * @param {number} userId - Get it from user_id
+    * @param {String} username - Osu account username
     * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
     */
-    async user_best_plays(userId: number, mode: number = 0) {
+    async user_best_plays(username: number, mode: number = 0) {
 
-        return getBestPlays(userId, mode);
+        return getBestPlays(username, mode);
 
     }
 
     /**
-    * @param {number} userId - Get it from user_id
+    * @param {String} username - Osu account username
     * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
     */
-    async user_first_place(userId: number, mode: number = 0) {
+    async user_first_place(username: number, mode: number = 0) {
 
-        return getFirstPlay(userId, mode);
+        return getFirstPlay(username, mode);
 
     }
 
     /**
-    * @param {number} userId - Get it from user_id
+    * @param {String} username - Osu account username
     * @param {number} mode - Osu mode [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
     */
-    async user_recent_play(userId: number, mode: number = 0) {
+    async user_recent_play(username: number, mode: number = 0) {
 
-        return getRecentPlay(userId, mode);
+        return getRecentPlay(username, mode);
 
     }
 
