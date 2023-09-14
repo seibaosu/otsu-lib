@@ -15,7 +15,7 @@ export const getBestPlays = async (username: string, mode: number) => {
 
             return {
                 status: 400,
-                message: 'NO_DATA'
+                message: 'USER_NOT_FOUND'
             }
 
         } else {
@@ -23,7 +23,7 @@ export const getBestPlays = async (username: string, mode: number) => {
             const req = await fetch(`${BaseURL}/users/${userId.id}/scores/best?mode=${strmode}&limit=100`);
             const res = await req.json();
 
-            let replayId = [];
+            let replayId: any = [];
             for (let i = 0; i < res.length; i++) {
 
                 const repId = await res[i];
@@ -32,9 +32,20 @@ export const getBestPlays = async (username: string, mode: number) => {
 
             }
 
-            return {
-                status: 200,
-                data: replayId
+            if (replayId.length == 0) {
+
+                return {
+                    status: 404,
+                    message: 'NO_DATA'
+                }
+
+            } else {
+
+                return {
+                    status: 200,
+                    data: replayId
+                }
+                
             }
 
         }
