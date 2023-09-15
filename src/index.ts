@@ -1,4 +1,4 @@
-import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay, updateBeatmaps } from './functions';
+import { getUserId, getUserData, getBestPlays, getFirstPlay, getRecentPlay, updateBeatmaps, rankingsByPerformance } from './functions';
 
 export class Otsu {
 
@@ -54,12 +54,21 @@ export class Otsu {
 
     /**
      * 
-     * Update latedt beatmap uploaded
+     * Update latest beatmap uploaded
      */
     async beatmap_update() {
 
         return updateBeatmaps();
 
+    }
+
+    /**
+     * 
+     * Update latest beatmap uploaded
+     */
+    async rank_performance(mode: number) {
+
+        return rankingsByPerformance(mode);
     }
 
 }
