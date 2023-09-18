@@ -66,7 +66,7 @@ export class Otsu {
      * 
      * Update latest beatmap uploaded
      */
-    async rank_performance(mode: number) {
+    async rank_performance(mode: number = 0) {
 
         return rankingsByPerformance(mode);
     }
