@@ -3,14 +3,14 @@ import { load } from "cheerio";
 
 import { BaseURL } from "../../constants";
 
-export const rankingsByPerformance = async (mode: number) => {
+export const rankingsByPerformance = async (mode: number, country: string = 'all') => {
 
     try {
 
         let strmode;
         strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : mode;
 
-        const req = await fetch(`${BaseURL}/rankings/${strmode}/performance`);
+        const req = await fetch(`${BaseURL}/rankings/${strmode}/performance?country=${country}`);
         const res = await req.text();
 
         const $ = load(res);
