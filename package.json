@@ -1,7 +1,7 @@
 {
   "name": "otsu-lib",
   "version": "1.230918.0610",
-  "description": "An unofficial module for a certain Rhythm Game",
+  "description": "A simple module for a certain Rhythm Game",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib && rimraf typings",
