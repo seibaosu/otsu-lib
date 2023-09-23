@@ -10,11 +10,10 @@ export const rankingsByPerformance = async (mode: number = 0, country: string = 
         let strmode;
         strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : 'osu';
 
-        let strList = ['all', '4k', '7k'];
-        let strIndex = strList[variant];
-        if (strIndex === undefined) strIndex = 'all';
+        let strVar;
+        strVar = variant === 0 ? 'all' : variant === 1 ? '4k' : variant === 2 ? '7k' : 'all';
 
-        const req = await fetch(`${BaseURL}/rankings/${strmode}/performance?country=${country}&variant=${strIndex}`);
+        const req = await fetch(`${BaseURL}/rankings/${strmode}/performance?country=${country}&variant=${strVar}`);
         const res = await req.text();
 
         const $ = load(res);
