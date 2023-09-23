@@ -64,11 +64,11 @@ export class Otsu {
 
     /**
      * 
-     * Update latest beatmap uploaded
+     * Get top 50 players by performance
      */
-    async rank_performance(mode: number = 0, country: string = 'all') {
+    async rank_performance(mode: number = 0, country: string = 'all', variant: string = 'all') {
 
-        return rankingsByPerformance(mode, country);
+        return rankingsByPerformance(mode, country, variant);
     }
 
 }
