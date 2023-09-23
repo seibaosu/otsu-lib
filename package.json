@@ -1,6 +1,6 @@
 {
   "name": "otsu-lib",
-  "version": "1.230918.0610",
+  "version": "1.230923.0754",
   "description": "A simple module for a certain Rhythm Game",
   "main": "./lib/index.js",
   "scripts": {
