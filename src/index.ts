@@ -66,7 +66,7 @@ export class Otsu {
      * 
      * Get top 50 players by performance
      */
-    async rank_performance(mode: number = 0, country: string = 'all', variant: string = 'all') {
+    async rank_performance(mode: number = 0, country: string = 'all', variant: number = 0) {
 
         return rankingsByPerformance(mode, country, variant);
     }

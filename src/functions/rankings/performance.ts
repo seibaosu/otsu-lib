@@ -3,14 +3,18 @@ import { load } from "cheerio";
 
 import { BaseURL } from "../../constants";
 
-export const rankingsByPerformance = async (mode: number = 0, country: string = 'all', variant: string = 'all') => {
+export const rankingsByPerformance = async (mode: number = 0, country: string = 'all', variant: number = 0) => {
 
     try {
 
         let strmode;
         strmode = mode === 0 ? 'osu' : mode === 1 ? 'taiko' : mode === 2 ? 'fruits' : mode === 3 ? 'mania' : 'osu';
 
-        const req = await fetch(`${BaseURL}/rankings/${strmode}/performance?country=${country}&variant=${variant}`);
+        let strList = ['all', '4k', '7k'];
+        let strIndex = strList[variant];
+        if (strIndex === undefined) strIndex = 'all';
+
+        const req = await fetch(`${BaseURL}/rankings/${strmode}/performance?country=${country}&variant=${strIndex}`);
         const res = await req.text();
 
         const $ = load(res);
@@ -54,7 +58,8 @@ export const rankingsByPerformance = async (mode: number = 0, country: string = 
 
             return {
                 status: 200,
-                data: result
+                data: result,
+                url: req.url
             }
         }
         
