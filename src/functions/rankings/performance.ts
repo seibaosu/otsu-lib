@@ -67,3 +67,26 @@ export const rankingsByPerformance = async (mode: number = 0, country: string = 
     }
 
 }
+
+export const codeCountry = async () => {
+
+    try {
+
+        const req = await fetch(`${BaseURL}/rankings/osu/performance`);
+        const res = await req.text();
+
+        const $ = load(res);
+
+        // get all country code from <script> tag and id = json-country-filter
+        const json = $('script#json-country-filter').text();
+
+        return {
+            status: 200,
+            data: JSON.parse(json).items
+        }
+        
+    } catch (e) {
+        return e;
+    }
+
+};
