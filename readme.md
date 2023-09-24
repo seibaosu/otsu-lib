@@ -75,7 +75,10 @@ const bot = new Otsu();
   
   * Params :
     
-    > `mode` : `number` - *optional* `default` : `0` [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    > `mode` : `number` - *optional* `default` : `0` [ 0:osu!  1:Taiko  2:Catch  3:Mania ]
+    > `country`: `string` - *optional* `default`: `all`
+    > `variant`: `number` - *optional* `default`: `all` [ 0:all 1:4K 2:7K ]
+
   ```
   await bot.rank_performance(mode);
   ```
