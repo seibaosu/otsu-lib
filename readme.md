@@ -21,7 +21,7 @@ const bot = new Otsu();
   
   * Params :
     
-    > Required => `username` : `string`
+    > Required ➤ `username` : `string`
   ```
   await bot.user_id('username');
   ```
@@ -30,7 +30,7 @@ const bot = new Otsu();
   
   * Params :
     
-    > Required => `username` : `string`
+    > Required ➤ `username` : `string`
   ```
   await bot.user_data('username');
   ```
@@ -39,8 +39,8 @@ const bot = new Otsu();
   
   * Params :
     
-    > Required => `username` : `string` <br>
-    > Optional => `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
+    > Required ➤ `username` : `string` <br>
+    > Optional ➤ `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
   ```
   await bot.user_best_plays(username, mode);
   ```
@@ -49,8 +49,8 @@ const bot = new Otsu();
   
   * Params :
     
-    > Required => `username` : `string` <br>
-    > Optional => `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
+    > Required ➤ `username` : `string` <br>
+    > Optional ➤ `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
   ```
   await bot.user_recent_play(username, mode);
   ```
@@ -59,8 +59,8 @@ const bot = new Otsu();
   
   * Params :
     
-    > Required => `username` : `string` <br>
-    > Optional => `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
+    > Required ➤ `username` : `string` <br>
+    > Optional ➤ `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
   ```
   await bot.user_first_place(username, mode);
   ```
@@ -75,9 +75,9 @@ const bot = new Otsu();
   
   * Params :
     
-    > Optional => `mode` : `number` - `default` : `0` *[ 0:osu!  1:Taiko  2:Catch  3:Mania ]* <br>
-    > Optional => `country`: `string` - `default`: `all` <br>
-    > Optional => `variant`: `number` - `default`: `all` *[ 0:all 1:4K 2:7K ]*
+    > Optional ➤ `mode` : `number` - `default` : `0` *[ 0:osu!  1:Taiko  2:Catch  3:Mania ]* <br>
+    > Optional ➤ `country`: `string` - `default`: `all` <br>
+    > Optional ➤ `variant`: `number` - `default`: `all` *[ 0:all 1:4K 2:7K ]*
 
   <details>
     <summary>Country code</summary>
