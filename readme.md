@@ -21,7 +21,7 @@ const bot = new Otsu();
   
   * Params :
     
-    > `username` : `string`
+    > Required => `username` : `string`
   ```
   await bot.user_id('username');
   ```
@@ -30,7 +30,7 @@ const bot = new Otsu();
   
   * Params :
     
-    > `username` : `string`
+    > Required => `username` : `string`
   ```
   await bot.user_data('username');
   ```
@@ -39,30 +39,30 @@ const bot = new Otsu();
   
   * Params :
     
-    > `username` : `string` <br>
-    > `mode` : `number` - *optional* `default` : `0` [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    > Required => `username` : `string` <br>
+    > Optional => `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
   ```
-  await bot.user_best_plays(username);
+  await bot.user_best_plays(username, mode);
   ```
 
 * GET LAST 24 HOURS PLAYS
   
   * Params :
     
-    > `username` : `string` <br>
-    > `mode` : `number` - *optional* `default` : `0` [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    > Required => `username` : `string` <br>
+    > Optional => `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
   ```
-  await bot.user_recent_play(username);
+  await bot.user_recent_play(username, mode);
   ```
 
 * GET FIRST PLACE BY USER
   
   * Params :
     
-    > `username` : `string` <br>
-    > `mode` : `number` - *optional* `default` : `0` [ 0: osu!  1:Taiko  2:Catch  3:Mania ]
+    > Required => `username` : `string` <br>
+    > Optional => `mode` : `number` - `default` : `0` *[ 0: osu!  1:Taiko  2:Catch  3:Mania ]*
   ```
-  await bot.user_first_place(username);
+  await bot.user_first_place(username, mode);
   ```
 
 * GET LATEST BEATMAP RANKED & LOVED
@@ -75,9 +75,9 @@ const bot = new Otsu();
   
   * Params :
     
-    > `mode` : `number` - *optional* `default` : `0` [ 0:osu!  1:Taiko  2:Catch  3:Mania ] <br>
-    > `country`: `string` - *optional* `default`: `all` <br>
-    > `variant`: `number` - *optional* `default`: `all` [ 0:all 1:4K 2:7K ]
+    > Optional => `mode` : `number` - `default` : `0` *[ 0:osu!  1:Taiko  2:Catch  3:Mania ]* <br>
+    > Optional => `country`: `string` - `default`: `all` <br>
+    > Optional => `variant`: `number` - `default`: `all` *[ 0:all 1:4K 2:7K ]*
 
   <details>
     <summary>Country code</summary>
@@ -331,5 +331,5 @@ const bot = new Otsu();
   </details>
 
   ```
-  await bot.rank_performance(mode);
+  await bot.rank_performance(mode, country, variant);
   ```
